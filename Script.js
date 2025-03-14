@@ -1,4 +1,4 @@
-let temp;
+let total;
 let a;
 let b;
 let operator;
@@ -36,7 +36,15 @@ function checkIfOperator(button){
     return operatorsList.includes(button);
 }
 
+// takes in the id of the button clicked, 
+// if its a number add its to a temporary pointer, then updates the display with the temp pointer
+// if its an operator that is not =, stores the current temp in A and the operator in operator, also resets temp to undefined
+// if the operator is =, sets B to current temp value, resets temp, calculates reusult and displays the reult.
 function updateDisplay(buttonId){
+    
+}
+
+/*function updateDisplay(buttonId){
     if (!checkIfOperator(buttonId)){
         if (temp === undefined){
             temp = buttonId;
@@ -46,26 +54,24 @@ function updateDisplay(buttonId){
         display.textContent = temp
     } else if (buttonId === "equals"){
         b = parseInt(temp, 10);
+        temp = undefined;
         let result = operate(operator, a, b);
-
-        console.log(result);
         display.textContent = result;
     }
     
     else{
-        if (a === undefined){
+        if (a === undefined && firstOperation === undefined){
             a = parseInt(temp, 10);
             temp = undefined;
+            firstOperation = 1;
         }
         operator = buttonId;
     }
 }
+    */
 
-
+//takes in a value of a, b and operator, based on the operator, performs operation and returns the result value
 function operate (operator, a, b){
-    console.log(b);
-    console.log(a);
-    console.log(operator);
     switch (operator) {
         case "add":
             result = add(a, b);
